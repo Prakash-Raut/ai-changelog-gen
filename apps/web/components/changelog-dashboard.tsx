@@ -14,7 +14,7 @@ export function ChangelogDashboard() {
 	const [changelogs, setChangelogs] = useState<ChangeLog[]>();
 
 	useEffect(() => {
-		fetch("http://localhost:5000/changelog")
+		fetch(`${process.env.NEXT_PUBLIC_API_URL}/changelogs`)
 			.then((res) => res.json())
 			.then((data) => setChangelogs(data));
 	}, []);

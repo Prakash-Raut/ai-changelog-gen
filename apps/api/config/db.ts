@@ -13,7 +13,7 @@ export const dbConnect = async (): Promise<void> => {
 	}
 
 	try {
-		const db = await connect("mongodb://127.0.0.1:27017/changelogdb");
+		const db = await connect(process.env.MONGO_URI!);
 
 		connection.isConnected = db.connections[0]?.readyState;
 

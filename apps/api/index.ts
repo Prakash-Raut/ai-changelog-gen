@@ -1,7 +1,7 @@
 import { dbConnect } from "./config/db.js";
 import { createServer } from "./server.js";
 
-const port = 5000;
+const port = process.env.PORT!;
 const server = createServer();
 
 server.listen(port, () => {
