@@ -1,0 +1,5 @@
+echo "🔁 Generating changelog..."
+node apps/api/scripts/generateAndPostChangelog.js
+
+echo "🧼 Linting staged files..."
+npx lint-staged

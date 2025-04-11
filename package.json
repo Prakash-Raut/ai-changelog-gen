@@ -4,19 +4,28 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "clean": "turbo clean",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "biome lint --write .",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@workspace/eslint-config": "workspace:*",
+    "@biomejs/biome": "1.9.4",
     "@workspace/typescript-config": "workspace:*",
-    "prettier": "^3.5.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {
     "node": ">=20"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx,json,md}": [
+      "pnpm run check"
+    ]
   }
 }
