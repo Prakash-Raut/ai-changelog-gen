@@ -4,8 +4,8 @@ import { ChangeLogModel } from "../models/ChangeLog.js";
 const changelogRouter: Router = Router();
 
 changelogRouter.post("/", async (req, res) => {
-  const { content, source } = req.body;
-  const entry = await ChangeLogModel.create({ content, source });
+  const { content, source, tags } = req.body;
+  const entry = await ChangeLogModel.create({ content, source, tags });
   res.json(entry);
 });
 

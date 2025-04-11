@@ -6,5 +6,5 @@ const server = createServer();
 
 server.listen(port, () => {
 	dbConnect();
-	console.log(`🚀 API running on http://localhost:${port}`);
+	console.log(`🔥 API is live!`);
 });
