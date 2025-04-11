@@ -39,7 +39,7 @@ const summarizeWithOllama = async (logs) => {
 
 const postToAPI = async (summary) => {
 	try {
-		const res = await fetch("http://localhost:5000/", {
+		const res = await fetch("http://localhost:5000/changelog", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ content: summary, source: "cli-gpt" }),

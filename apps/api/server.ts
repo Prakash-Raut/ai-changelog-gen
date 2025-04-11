@@ -3,6 +3,7 @@ import type { Express, NextFunction, Request, Response } from "express";
 import express from "express";
 import morgan from "morgan";
 import { changelogRouter } from "./route/changelog.js";
+import { webhookRouter } from "./route/webhook.js";
 
 export const createServer = (): Express => {
   const app = express();
@@ -18,7 +19,8 @@ export const createServer = (): Express => {
     .get("/status", (req: Request, res: Response, next: NextFunction) => {
       res.json({ ok: true });
     })
-    .use("/", changelogRouter);
+    .use("/changelog", changelogRouter)
+    .use("/webhook", webhookRouter);
 
   return app;
 };

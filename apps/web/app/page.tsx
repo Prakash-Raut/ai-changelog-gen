@@ -14,7 +14,7 @@ export default function Page() {
 	const [logs, setLogs] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/")
+		fetch("http://localhost:5000/changelog")
 			.then((res) => res.json())
 			.then((data) => setLogs(data));
 	}, []);

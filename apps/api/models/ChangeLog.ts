@@ -14,4 +14,4 @@ const changelogSchema = new Schema<ChangeLog>({
   updatedAt: { type: Date, default: Date.now }
 })
 
-export const ChannelLogModel = model<ChangeLog>('Channellog', changelogSchema, 'channellogs')
+export const ChangeLogModel = model<ChangeLog>('Channellog', changelogSchema, 'channellogs')
