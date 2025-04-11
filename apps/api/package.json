@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx index.ts",
+    "dev": "tsx watch index.ts",
+    "lint": "pnpm biome check --write .",
+    "format": "pnpm biome format --write .",
+    "check": "pnpm biome check --write ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.9",
+    "tsx": "^4.19.3"
+  }
+}
